@@ -10,6 +10,7 @@ import {
   User,
   Phone,
   Sparkles,
+  MapPin,
 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../ui/Card';
 import { Badge } from '../ui/Badge';
@@ -61,12 +62,6 @@ export function ValuationFormSection() {
     }
   };
 
-  const encode = (data: Record<string, string>) => {
-    return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
@@ -75,21 +70,33 @@ export function ValuationFormSection() {
     setSubmitError(null);
 
     try {
-      // Netlify Forms POST Request
-      await fetch('/', {
+      // Encode form payload using URLSearchParams for Netlify Forms
+      const payload = new URLSearchParams();
+      payload.append('form-name', 'tasacion-inmueble');
+      payload.append('nombre', formData.nombre);
+      payload.append('telefono', formData.telefono);
+      payload.append('email', formData.email);
+      payload.append('barrio', formData.barrio);
+      payload.append('tipo_inmueble', formData.tipo_inmueble);
+      payload.append('dormitorios', formData.dormitorios);
+      payload.append('objetivo', formData.objetivo);
+      payload.append('detalles', formData.detalles);
+
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'tasacion-inmueble',
-          ...formData,
-        }),
+        body: payload.toString(),
       });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
       setIsSubmitting(false);
       setIsSubmitted(true);
     } catch {
+      // In SPA/local mode or network fallback, render success state so user is never blocked
       setIsSubmitting(false);
-      // Even if fetch fails offline, display success with direct WhatsApp fallback option
       setIsSubmitted(true);
     }
   };
@@ -336,7 +343,7 @@ export function ValuationFormSection() {
             </CardContent>
           </Card>
 
-          {/* Reassurance Sidebar */}
+          {/* Reassurance Sidebar with direct active links */}
           <div className="space-y-6">
             <Card variant="bordered" className="p-6 space-y-5">
               <div className="space-y-1">
@@ -376,10 +383,29 @@ export function ValuationFormSection() {
                 </li>
               </ul>
 
-              <div className="pt-4 border-t border-slate-200 space-y-1.5 text-xs text-slate-600">
-                <p>📍 {siteConfig.location.display}</p>
-                <p>✉️ {siteConfig.contact.email}</p>
-                <p>📱 {siteConfig.contact.phoneDisplay}</p>
+              <div className="pt-4 border-t border-slate-200 space-y-2 text-xs text-slate-600">
+                <p className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                  <span>{siteConfig.location.display}</span>
+                </p>
+                <p>
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="flex items-center gap-1.5 text-slate-700 hover:text-black font-medium transition-colors"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-slate-500" />
+                    <span>{siteConfig.contact.email}</span>
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href={`tel:${siteConfig.contact.phoneClean}`}
+                    className="flex items-center gap-1.5 text-slate-700 hover:text-black font-medium transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-slate-500" />
+                    <span>{siteConfig.contact.phoneDisplay}</span>
+                  </a>
+                </p>
               </div>
             </Card>
           </div>

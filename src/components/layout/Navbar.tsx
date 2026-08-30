@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Building2, MessageCircle, ArrowRight, ChevronRight } from 'lucide-react';
+import { Menu, X, Building2, MessageCircle, ArrowRight, ChevronRight, Mail, Phone } from 'lucide-react';
 import { siteConfig } from '../../constants/siteConfig';
 import { Button } from '../ui/Button';
 import { cn } from '../../utils/cn';
@@ -130,7 +130,7 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Dedicated Mobile Fullscreen Overlay & Drawer (z-[60] guarantee above all elements) */}
+      {/* Dedicated Mobile Fullscreen Overlay & Drawer (z-[60]) */}
       {isMobileMenuOpen && (
         <div
           role="dialog"
@@ -204,11 +204,25 @@ export function Navbar() {
               </a>
             </div>
 
-            {/* Contact Details in Drawer */}
-            <div className="pt-4 border-t border-slate-200 text-center text-xs text-slate-500 space-y-1.5">
+            {/* Contact Details in Drawer with Active mailto: and tel: links */}
+            <div className="pt-4 border-t border-slate-200 text-center text-xs space-y-2">
               <p className="font-semibold text-slate-800">{siteConfig.name} &bull; {siteConfig.agency.name}</p>
-              <p className="text-slate-600">{siteConfig.contact.email}</p>
-              <p className="text-slate-600 font-medium">{siteConfig.contact.phoneDisplay}</p>
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="inline-flex items-center justify-center gap-1.5 text-slate-700 hover:text-black font-medium transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 text-slate-500" />
+                <span>{siteConfig.contact.email}</span>
+              </a>
+              <div>
+                <a
+                  href={`tel:${siteConfig.contact.phoneClean}`}
+                  className="inline-flex items-center justify-center gap-1.5 text-slate-700 hover:text-black font-medium transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-slate-500" />
+                  <span>{siteConfig.contact.phoneDisplay}</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
