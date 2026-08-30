@@ -17,32 +17,27 @@ export function FaqSection() {
     {
       question: '¿La tasación o valoración de mi propiedad tiene algún costo?',
       answer:
-        'No, la tasación y el análisis comparativo de mercado (ACM) son 100% gratuitos y sin ningún compromiso contractual. Mi objetivo es que conozcas el valor real de mercado de tu inmueble en Montevideo para tomar la mejor decisión.',
+        'No, la tasación y el análisis comparativo de mercado (ACM) son 100% gratuitos y sin ningún compromiso contractual. El objetivo es que conozcas el valor real de mercado de tu inmueble en Montevideo para tomar la mejor decisión.',
     },
     {
       question: '¿Por qué vender con un asesor dedicado en vez de publicarlo por mi cuenta?',
       answer:
-        'Vender de forma particular suele implicar atender decenas de curiosos sin solvencia real, exponer la seguridad de tu hogar en visitas y fijar precios que pueden quemar la propiedad en portales. Conmigo contás con filtrado previo de compradores, producción profesional, difusión estratégica, defensa del precio y coordinación notarial hasta el cierre.',
+        'Vender de forma particular expone la seguridad de tu hogar, consume tiempo en llamadas de curiosos y suele fijar precios emocionales que estancan la propiedad. Conmigo contás con filtrado previo de compradores, producción profesional, difusión estratégica, defensa del precio y coordinación notarial hasta el cierre.',
     },
     {
       question: '¿Qué ventajas obtengo con el respaldo de Inmobiliaria Imperium?',
       answer:
-        'Disfrutás de lo mejor de dos mundos: la cercanía y dedicación 1 a 1 de Simon Mantuani como tu agente exclusivo, respaldado por la infraestructura, la red de contactos, los portales premium y la solidez institucional de Inmobiliaria Imperium.',
+        'Disfrutás de lo mejor de dos mundos: la cercanía y dedicación 1 a 1 de Simon Mantuani como tu agente personal, respaldado por la infraestructura, la red de compradores y la solidez de Inmobiliaria Imperium.',
     },
     {
       question: '¿Qué documentación necesito para comenzar a comercializar mi propiedad?',
       answer:
-        'Para iniciar el proceso de comercialización requerimos copia simple del título de propiedad o antecedente notarial, plano de mensura y los últimos recibos de contribución inmobiliaria y gastos comunes al día. Te asesoramos paso a paso en caso de requerir gestiones notariales previas.',
+        'Para iniciar el proceso requerimos copia simple del título de propiedad o antecedente notarial, plano de mensura y los últimos recibos de contribución inmobiliaria y gastos comunes al día. Te asesoramos paso a paso en caso de requerir gestiones notariales previas.',
     },
     {
       question: '¿Cuánto tiempo suele demorar la venta de una propiedad en Montevideo?',
       answer:
-        'El plazo varía según la zona y tipología, pero una propiedad con precio óptimo de mercado y plan de difusión activo suele concentrar el mayor flujo de visitas y ofertas calificadas durante los primeros 45 a 60 días de publicación.',
-    },
-    {
-      question: '¿Cómo coordinamos una primera reunión o visita de diagnóstico?',
-      answer:
-        'Podés completar el formulario de tasación en esta web o enviarme un mensaje por WhatsApp. Coordinaremos una visita a tu inmueble o una reunión virtual en el horario que te resulte más conveniente.',
+        'El plazo varía según la zona y tipología, pero una propiedad con precio óptimo de mercado y plan de difusión activo suele concentrar el mayor flujo de interesados calificados durante los primeros 45 a 60 días.',
     },
   ];
 
@@ -51,25 +46,25 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faqs" className="scroll-mt-28 py-16 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="faqs" className="scroll-mt-24 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Header */}
-        <div className="text-center space-y-4 max-w-2xl mx-auto">
+        <div className="text-center space-y-3 max-w-2xl mx-auto">
           <div className="flex justify-center">
-            <Badge variant="accent" icon={<Sparkles className="w-3.5 h-3.5" />}>
+            <Badge variant="default" icon={<Sparkles className="w-3.5 h-3.5" />}>
               Resolvemos tus Dudas
             </Badge>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Preguntas Frecuentes de Propietarios
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            Preguntas Frecuentes
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             Respuestas claras a las consultas más habituales antes de vender o tasar tu inmueble en Montevideo.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-3.5">
+        <div className="space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
@@ -77,28 +72,28 @@ export function FaqSection() {
               <div
                 key={index}
                 className={cn(
-                  'rounded-2xl border transition-all duration-300 overflow-hidden',
+                  'rounded-2xl border transition-all duration-200 overflow-hidden',
                   isOpen
-                    ? 'bg-slate-900/90 border-emerald-500/40 shadow-lg shadow-emerald-950/20'
-                    : 'bg-slate-900/50 border-slate-800/80 hover:border-slate-700'
+                    ? 'bg-white border-slate-300 shadow-xs'
+                    : 'bg-white border-slate-200 hover:border-slate-300'
                 )}
               >
                 <button
                   type="button"
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-2xl select-none"
+                  className="w-full px-5 sm:px-6 py-4.5 text-left flex items-center justify-between gap-4 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 rounded-2xl select-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-bold text-white flex items-center gap-3">
-                    <HelpCircle className={cn('w-5 h-5 shrink-0 transition-colors', isOpen ? 'text-emerald-400' : 'text-slate-400')} />
+                  <span className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-3">
+                    <HelpCircle className={cn('w-5 h-5 shrink-0 transition-colors', isOpen ? 'text-slate-900' : 'text-slate-400')} />
                     <span>{faq.question}</span>
                   </span>
                   <div
                     className={cn(
-                      'w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300',
+                      'w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200',
                       isOpen
-                        ? 'bg-emerald-500/20 text-emerald-400 rotate-180'
-                        : 'bg-slate-800 text-slate-400'
+                        ? 'bg-slate-100 text-slate-900 rotate-180'
+                        : 'bg-slate-50 text-slate-500'
                     )}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -106,7 +101,7 @@ export function FaqSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="px-5 sm:px-6 pb-5 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in duration-150">
                     <p className="pl-8">{faq.answer}</p>
                   </div>
                 )}
@@ -116,8 +111,8 @@ export function FaqSection() {
         </div>
 
         {/* Bottom support prompt */}
-        <div className="p-6 rounded-3xl glass-panel border border-slate-800 text-center space-y-4">
-          <p className="text-sm text-slate-300">
+        <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 text-center space-y-3">
+          <p className="text-sm text-slate-700">
             ¿Tenés alguna otra duda sobre tu caso particular?
           </p>
           <div className="flex justify-center">

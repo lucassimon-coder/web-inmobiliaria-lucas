@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#090d16" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://simonmantuani.com/" />
     
     <!-- Primary Meta Tags -->
@@ -42,8 +42,8 @@
       "name": "Simon Mantuani - Asesor Inmobiliario",
       "jobTitle": "Agente Inmobiliario",
       "url": "https://simonmantuani.com",
-      "telephone": "+59899000000",
-      "email": "contacto@simonmantuani.com",
+      "telephone": "+59892979142",
+      "email": "lucasmantuanimperium@gmail.com",
       "description": "Asesoramiento profesional para la venta y tasación de propiedades en Montevideo con el respaldo de Inmobiliaria Imperium.",
       "address": {
         "@type": "PostalAddress",
@@ -71,7 +71,21 @@
     }
     </script>
   </head>
-  <body class="bg-neutral-950 text-neutral-100 selection:bg-emerald-500/20 selection:text-emerald-300">
+  <body class="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+    <!-- Static Hidden Form for Netlify Post-Processing in SPAs -->
+    <form name="tasacion-inmueble" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="tasacion-inmueble" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="nombre" />
+      <input type="text" name="telefono" />
+      <input type="email" name="email" />
+      <input type="text" name="barrio" />
+      <input type="text" name="tipo_inmueble" />
+      <input type="text" name="dormitorios" />
+      <input type="text" name="objetivo" />
+      <textarea name="detalles"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -11,10 +11,10 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const badgeVariants: Record<BadgeVariant, string> = {
-  default: 'bg-slate-800/80 text-slate-200 border-slate-700',
-  accent: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30',
-  outline: 'bg-transparent text-slate-300 border-slate-700/80',
-  success: 'bg-emerald-600 text-white border-emerald-500 shadow-sm shadow-emerald-950',
+  default: 'bg-slate-100 text-slate-700 border-slate-200/90',
+  accent: 'bg-slate-900 text-white border-slate-900',
+  outline: 'bg-white text-slate-700 border-slate-200',
+  success: 'bg-emerald-50 text-emerald-800 border-emerald-200',
 };
 
 const badgeSizes: Record<BadgeSize, string> = {

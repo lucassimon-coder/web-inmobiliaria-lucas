@@ -10,7 +10,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -44,40 +44,40 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
+        'fixed top-0 left-0 w-full z-50 transition-all duration-200',
         isScrolled
-          ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30 py-3'
-          : 'bg-slate-950/50 backdrop-blur-sm border-b border-white/5 py-4'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs py-3'
+          : 'bg-white/80 backdrop-blur-sm border-b border-slate-200/60 py-4'
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Identity */}
           <a
             href="#inicio"
             onClick={handleNavClick}
-            className="flex items-center gap-3 group select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1"
+            className="flex items-center gap-2.5 group select-none outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 rounded-lg"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:border-emerald-500/60 group-hover:scale-105 transition-all duration-200 shadow-sm shadow-emerald-950">
-              <Building2 className="w-5 h-5" />
+            <div className="w-9 h-9 rounded-xl bg-zinc-900 flex items-center justify-center text-white shadow-xs group-hover:bg-zinc-800 transition-colors">
+              <Building2 className="w-4.5 h-4.5" />
             </div>
             <div className="flex flex-col text-left">
-              <span className="text-base sm:text-lg font-bold text-white tracking-tight group-hover:text-emerald-300 transition-colors">
+              <span className="text-base font-bold text-slate-900 tracking-tight leading-none group-hover:text-black">
                 {siteConfig.name}
               </span>
-              <span className="text-[11px] font-medium text-slate-400 -mt-0.5 tracking-wide">
+              <span className="text-[11px] font-medium text-slate-500 tracking-wide mt-1">
                 {siteConfig.role} &bull; Montevideo
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1.5" aria-label="Navegación principal">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Navegación principal">
             {siteConfig.navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors hover:bg-slate-800/50 outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="px-3.5 py-1.5 text-sm font-medium text-slate-600 hover:text-slate-950 rounded-lg transition-colors hover:bg-slate-100/80 outline-none focus-visible:ring-2 focus-visible:ring-zinc-900"
               >
                 {link.label}
               </a>
@@ -90,7 +90,7 @@ export function Navbar() {
               href={siteConfig.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-emerald-400 transition-colors px-2 py-1"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-[#25D366] transition-colors px-2 py-1"
             >
               <MessageCircle className="w-4 h-4 text-[#25D366]" />
               <span>WhatsApp</span>
@@ -108,16 +108,16 @@ export function Navbar() {
               href={siteConfig.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Contactar por WhatsApp"
-              className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 active:scale-95"
+              aria-label="WhatsApp directo"
+              className="p-2 rounded-xl bg-emerald-50 text-[#25D366] border border-emerald-200 active:scale-95 transition-transform"
             >
-              <MessageCircle className="w-5 h-5 text-[#25D366]" />
+              <MessageCircle className="w-5 h-5" />
             </a>
 
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 hover:text-white hover:border-slate-700 active:scale-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              className="p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 hover:text-black hover:bg-slate-200 active:scale-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-zinc-900"
               aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú de navegación'}
               aria-expanded={isMobileMenuOpen}
             >
@@ -127,27 +127,27 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu - Clean Full-Screen Slide-Down */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-[65px] z-40 lg:hidden flex flex-col bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/80 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="fixed inset-0 top-[61px] z-40 lg:hidden flex flex-col bg-white/98 backdrop-blur-xl border-t border-slate-200 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-150">
           <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
-            <nav className="flex flex-col space-y-2" aria-label="Menú móvil">
+            <nav className="flex flex-col space-y-1" aria-label="Menú móvil">
               {siteConfig.navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={handleNavClick}
-                  className="px-4 py-3 rounded-xl text-base font-semibold text-slate-200 hover:text-white hover:bg-slate-900/80 border border-transparent hover:border-slate-800 transition-all"
+                  className="px-4 py-3.5 rounded-xl text-base font-semibold text-slate-800 hover:text-black hover:bg-slate-50 border-b border-slate-100 last:border-0 transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
 
-            <div className="pt-4 border-t border-slate-800/80 space-y-3">
+            <div className="pt-2 space-y-3">
               <a href="#tasacion" onClick={handleNavClick} className="block w-full">
                 <Button variant="primary" size="lg" className="w-full justify-center" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                  Quiero Vender / Tasar
+                  Solicitar Tasación Sin Costo
                 </Button>
               </a>
 
@@ -163,9 +163,10 @@ export function Navbar() {
               </a>
             </div>
 
-            <div className="pt-2 text-center text-xs text-slate-400">
-              <p className="font-medium text-slate-300">{siteConfig.location.display}</p>
-              <p className="mt-1 text-[11px] text-slate-400">{siteConfig.contact.email}</p>
+            <div className="pt-4 border-t border-slate-200 text-center text-xs text-slate-500 space-y-1">
+              <p className="font-semibold text-slate-800">{siteConfig.name} &bull; {siteConfig.agency.name}</p>
+              <p className="text-slate-500">{siteConfig.contact.email}</p>
+              <p className="text-slate-500">{siteConfig.contact.phoneDisplay}</p>
             </div>
           </div>
         </div>

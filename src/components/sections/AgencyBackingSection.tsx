@@ -13,32 +13,28 @@ import { Button } from '../ui/Button';
 export function AgencyBackingSection() {
   const advantages = [
     {
-      icon: <Globe2 className="w-5 h-5 text-emerald-400" />,
+      icon: <Globe2 className="w-5 h-5 text-slate-900" />,
       title: 'Máxima Difusión en Red',
-      description: 'Tu propiedad se potencia con el alcance digital, portales líderes y la red de contactos de Imperium.',
+      description: 'Tu propiedad se potencia con el alcance de portales líderes y la red de contactos de Imperium.',
     },
     {
-      icon: <Users2 className="w-5 h-5 text-emerald-400" />,
+      icon: <Users2 className="w-5 h-5 text-slate-900" />,
       title: 'Compradores Calificados',
       description: 'Acceso directo a una base continua de inversores y familias en búsqueda activa en Montevideo.',
     },
     {
-      icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
-      title: 'Solidez Notarial y Jurídica',
-      description: 'Soporte profesional integral para garantizar transacciones 100% transparentes y seguras.',
+      icon: <ShieldCheck className="w-5 h-5 text-slate-900" />,
+      title: 'Solidez Notarial & Jurídica',
+      description: 'Soporte profesional integral para garantizar operaciones 100% transparentes y seguras.',
     },
   ];
 
   return (
-    <section id="respaldo" className="scroll-mt-28 py-12 relative">
+    <section id="respaldo" className="scroll-mt-24 py-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl glass-panel border border-slate-800/90 p-8 sm:p-12 lg:p-14 overflow-hidden shadow-2xl space-y-10">
-          {/* Ambient lighting inside container */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-slate-800/40 rounded-full blur-2xl pointer-events-none" />
-
+        <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 shadow-xs space-y-8">
           {/* Header */}
-          <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800/80 pb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 pb-8">
             <div className="space-y-3 max-w-2xl">
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="accent" icon={<Sparkles className="w-3.5 h-3.5" />}>
@@ -47,13 +43,13 @@ export function AgencyBackingSection() {
                 <Badge variant="default">Montevideo, UY</Badge>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
                 Atención personalizada con el respaldo de una firma líder
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Combino la dedicación cercana de un agente personal con la infraestructura, cartera y fuerza comercial de{' '}
-                <strong className="text-white font-semibold">{siteConfig.agency.name}</strong>.
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Combino la cercanía de un agente personal dedicado con la infraestructura, cartera y fuerza comercial de{' '}
+                <strong className="text-slate-900 font-semibold">{siteConfig.agency.name}</strong>.
               </p>
             </div>
 
@@ -68,8 +64,8 @@ export function AgencyBackingSection() {
                 <Button
                   variant="outline"
                   size="md"
-                  className="w-full justify-center bg-slate-900/80 hover:bg-slate-800 border-slate-700 hover:border-emerald-500/50"
-                  rightIcon={<ExternalLink className="w-4 h-4 text-emerald-400" />}
+                  className="w-full justify-center"
+                  rightIcon={<ExternalLink className="w-4 h-4 text-slate-600" />}
                 >
                   Ver Cartera en Imperium
                 </Button>
@@ -78,17 +74,17 @@ export function AgencyBackingSection() {
           </div>
 
           {/* 3 Pillars Grid */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {advantages.map((adv) => (
               <div
                 key={adv.title}
-                className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-3 hover:border-slate-700 transition-colors"
+                className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-2xs">
                   {adv.icon}
                 </div>
-                <h3 className="text-base font-bold text-white">{adv.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900">{adv.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {adv.description}
                 </p>
               </div>
@@ -96,13 +92,13 @@ export function AgencyBackingSection() {
           </div>
 
           {/* Trust callout footer */}
-          <div className="relative z-10 p-5 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-            <p className="text-xs sm:text-sm text-slate-300">
-              💡 <span className="font-semibold text-white">¿Buscás comprar o invertir?</span> Tenés a disposición todo el catálogo activo de Inmobiliaria Imperium con mi asesoramiento directo.
+          <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <p className="text-xs sm:text-sm text-slate-700">
+              💡 <span className="font-semibold text-slate-900">¿Buscás comprar o invertir?</span> Tenés a disposición todo el catálogo activo de Inmobiliaria Imperium con mi asesoramiento directo.
             </p>
             <a href="#tasacion" className="shrink-0 w-full sm:w-auto">
               <Button variant="primary" size="sm" className="w-full sm:w-auto" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
-                Tasá tu Inmueble con Nosotros
+                Tasá tu Inmueble
               </Button>
             </a>
           </div>

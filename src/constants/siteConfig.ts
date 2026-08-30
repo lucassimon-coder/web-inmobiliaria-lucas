@@ -4,7 +4,7 @@ export const siteConfig = {
   brandTagline: 'Asesoría Inmobiliaria Estratégica en Montevideo',
   title: 'Simon Mantuani | Venta y Tasación de Propiedades en Montevideo',
   description: 'Estrategia, análisis de mercado y acompañamiento personalizado para vender tu propiedad al mejor valor en Montevideo con el respaldo de Inmobiliaria Imperium.',
-  valueProposition: 'Estrategia, análisis de mercado y acompañamiento personalizado para vender tu propiedad al mejor valor en Montevideo.',
+  valueProposition: 'Estrategia de comercialización a medida y acompañamiento 1 a 1 para vender tu propiedad al mejor valor en Montevideo.',
   url: 'https://simonmantuani.com',
   author: 'Simon Mantuani',
 
@@ -13,8 +13,8 @@ export const siteConfig = {
     name: 'Inmobiliaria Imperium',
     url: 'https://www.inmobiliariaimperium.com/',
     badge: 'Agente Asociado a Inmobiliaria Imperium',
-    description: 'Contamos con el respaldo, la red de difusión y el catálogo de propiedades de una de las firmas destacadas del mercado inmobiliario uruguayo.',
-    catalogNote: 'Acceso a una amplia cartera activa de propiedades para compradores e inversores en todo el país.',
+    description: 'Contamos con el respaldo, la infraestructura y el catálogo de propiedades de una de las firmas líderes del mercado uruguayo.',
+    catalogNote: 'Acceso a una amplia cartera de propiedades activas para compradores e inversores.',
   },
 
   location: {
@@ -37,11 +37,11 @@ export const siteConfig = {
   },
 
   contact: {
-    phoneDisplay: '+598 99 000 000',
-    phoneClean: '59899000000',
-    email: 'contacto@simonmantuani.com',
+    phoneDisplay: '+598 92 979 142',
+    phoneClean: '59892979142',
+    email: 'lucasmantuanimperium@gmail.com',
     address: 'Montevideo, Uruguay',
-    whatsappMessageTasar: 'Hola Simon, me gustaría solicitar una tasación/valoración para mi propiedad en Montevideo.',
+    whatsappMessageTasar: 'Hola Simon, me gustaría solicitar una tasación para mi propiedad en Montevideo.',
     whatsappMessageVender: 'Hola Simon, quiero asesorarme para vender mi propiedad en Montevideo con el respaldo de Inmobiliaria Imperium.',
     whatsappMessageGeneral: 'Hola Simon, quisiera hacerte una consulta sobre el mercado inmobiliario en Montevideo.',
     scheduleMeetingUrl: 'https://calendly.com',
@@ -51,17 +51,17 @@ export const siteConfig = {
     instagram: 'https://instagram.com/simonmantuani.propiedades',
     linkedin: 'https://linkedin.com/in/simonmantuani',
     facebook: 'https://facebook.com/simonmantuani.propiedades',
-    whatsapp: 'https://wa.me/59899000000?text=Hola%20Simon,%20quiero%20tasar/vender%20mi%20propiedad%20en%20Montevideo',
+    whatsapp: 'https://wa.me/59892979142?text=Hola%20Simon,%20quiero%20tasar/vender%20mi%20propiedad%20en%20Montevideo',
   },
 
   navLinks: [
     { label: 'Inicio', href: '#inicio' },
     { label: 'Respaldo', href: '#respaldo' },
     { label: 'Servicios', href: '#servicios' },
-    { label: 'Por Qué Elegirme', href: '#por-que-elegirme' },
+    { label: 'Diferenciales', href: '#por-que-elegirme' },
     { label: 'Proceso', href: '#proceso' },
     { label: 'Tasación', href: '#tasacion' },
-    { label: 'Preguntas Frecuentes', href: '#faqs' },
+    { label: 'FAQs', href: '#faqs' },
   ],
 
   stats: [

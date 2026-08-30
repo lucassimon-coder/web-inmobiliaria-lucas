@@ -9,9 +9,9 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const cardVariants: Record<CardVariant, string> = {
-  default: 'bg-slate-900/60 border border-slate-800/80 backdrop-blur-md',
-  elevated: 'bg-slate-900/80 border border-slate-800 shadow-xl shadow-black/40 backdrop-blur-lg',
-  bordered: 'bg-transparent border-2 border-slate-800/90',
+  default: 'bg-white border border-slate-200 shadow-xs',
+  elevated: 'bg-white border border-slate-200 shadow-sm',
+  bordered: 'bg-slate-50/60 border border-slate-200',
 };
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
@@ -20,9 +20,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          'rounded-2xl text-slate-100 overflow-hidden transition-all duration-300',
+          'rounded-2xl text-slate-900 overflow-hidden transition-all duration-200',
           cardVariants[variant],
-          hoverEffect && 'hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-950/20',
+          hoverEffect && 'hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5',
           className
         )}
         {...props}
@@ -48,7 +48,7 @@ CardHeader.displayName = 'CardHeader';
 export const CardTitle = forwardRef<HTMLHeadingElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, children, ...props }, ref) => {
     return (
-      <h3 ref={ref} className={cn('text-lg sm:text-xl font-bold tracking-tight text-white', className)} {...props}>
+      <h3 ref={ref} className={cn('text-lg sm:text-xl font-bold tracking-tight text-slate-900', className)} {...props}>
         {children}
       </h3>
     );
@@ -59,7 +59,7 @@ CardTitle.displayName = 'CardTitle';
 export const CardDescription = forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
   ({ className, children, ...props }, ref) => {
     return (
-      <p ref={ref} className={cn('text-sm text-slate-400 leading-relaxed', className)} {...props}>
+      <p ref={ref} className={cn('text-sm text-slate-600 leading-relaxed', className)} {...props}>
         {children}
       </p>
     );

@@ -9,105 +9,104 @@ import {
 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../ui/Card';
 import { Badge } from '../ui/Badge';
-import { Button } from '../ui/Button';
 import { siteConfig } from '../../constants/siteConfig';
 
 export function ServicesSection() {
   const services = [
     {
-      icon: <Calculator className="w-6 h-6 text-emerald-400" />,
+      icon: <Calculator className="w-5 h-5 text-slate-900" />,
       title: 'Valoración Profesional de Mercado',
-      description: 'Estimación precisa y realista basada en la oferta actual y en operaciones concretas cerradas en Montevideo.',
+      description: 'Estimación precisa y realista basada en la oferta actual y operaciones reales en Montevideo.',
       benefits: [
         'Análisis Comparativo de Mercado (ACM) actualizado.',
-        'Evaluación de metraje, estado, orientación y gastos comunes.',
-        'Estrategia de precio óptimo para no quemar la propiedad en portales.',
+        'Evaluación de metraje, estado, orientación y gastos.',
+        'Estrategia de precio óptimo de salida.',
       ],
       ctaText: 'Solicitar Tasación',
-      ctaHref: '#contacto',
+      ctaHref: '#tasacion',
     },
     {
-      icon: <Camera className="w-6 h-6 text-emerald-400" />,
+      icon: <Camera className="w-5 h-5 text-slate-900" />,
       title: 'Plan de Comercialización & Difusión',
-      description: 'Presentación de alto impacto visual y difusión activa para captar a los compradores calificados más rápido.',
+      description: 'Presentación de alto impacto visual para captar a compradores calificados rápidamente.',
       benefits: [
-        'Producción fotográfica profesional destacando los mejores atributos.',
-        'Posicionamiento prioritario en los principales portales de Uruguay.',
-        'Difusión dirigida en redes sociales y base de contactos de inversores.',
+        'Producción fotográfica destacando los mejores atributos.',
+        'Posicionamiento prioritario en portales líderes de Uruguay.',
+        'Difusión dirigida en redes y red Inmobiliaria Imperium.',
       ],
       ctaText: 'Ver Plan de Difusión',
-      ctaHref: '#contacto',
+      ctaHref: '#tasacion',
     },
     {
-      icon: <Users className="w-6 h-6 text-emerald-400" />,
-      title: 'Calificación de Compradores & Visitas',
-      description: 'Filtramos con rigurosidad a los interesados para cuidar tu tiempo, privacidad y la seguridad de tu hogar.',
+      icon: <Users className="w-5 h-5 text-slate-900" />,
+      title: 'Filtro de Compradores & Visitas',
+      description: 'Filtramos con rigurosidad a los interesados para cuidar tu tiempo y la seguridad de tu hogar.',
       benefits: [
-        'Verificación previa de solvencia económica e interés genuino.',
-        'Coordinación ordenada de visitas con registro y aviso anticipado.',
-        'Devolución detallada post-visita con el feedback de cada interesado.',
+        'Verificación de solvencia e interés genuino de compra.',
+        'Coordinación ordenada de visitas con aviso previo.',
+        'Devolución detallada con feedback post-visita.',
       ],
       ctaText: 'Consultar por Visitas',
-      ctaHref: '#contacto',
+      ctaHref: '#tasacion',
     },
     {
-      icon: <FileCheck2 className="w-6 h-6 text-emerald-400" />,
+      icon: <FileCheck2 className="w-5 h-5 text-slate-900" />,
       title: 'Negociación & Cierre Notarial',
       description: 'Defensa estratégica del valor de tu inmueble y gestión documental transparente hasta la firma final.',
       benefits: [
-        'Negociación profesional defendiendo tus márgenes y condiciones.',
-        'Revisión y acompañamiento en reservas y compromisos de compraventa.',
-        'Coordinación directa con escribanos para una escrituración sin fricción.',
+        'Negociación profesional defendiendo tus condiciones.',
+        'Acompañamiento en reservas y compromisos de compraventa.',
+        'Coordinación directa con escribanos.',
       ],
       ctaText: 'Asesorarme en Negociación',
-      ctaHref: '#contacto',
+      ctaHref: '#tasacion',
     },
   ];
 
   return (
-    <section id="servicios" className="scroll-mt-28 py-16 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="servicios" className="scroll-mt-24 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header */}
-        <div className="text-center space-y-4 max-w-2xl mx-auto">
+        <div className="text-center space-y-3 max-w-2xl mx-auto">
           <div className="flex justify-center">
-            <Badge variant="accent">Servicios para Propietarios</Badge>
+            <Badge variant="default">Servicios para Propietarios</Badge>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
             Cómo te ayudo a vender tu inmueble
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-            Un servicio integral y transparente diseñado para maximizar el valor de tu propiedad en Montevideo y simplificar cada etapa del proceso.
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Un servicio integral y transparente diseñado para maximizar el valor de tu propiedad en Montevideo.
           </p>
         </div>
 
         {/* Services Grid (4 Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {services.map((service) => (
             <Card
               key={service.title}
               variant="elevated"
               hoverEffect
-              className="flex flex-col justify-between p-2"
+              className="flex flex-col justify-between"
             >
               <div>
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-2">
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center mb-1">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-sm text-slate-300">
+                  <CardTitle className="text-lg sm:text-xl">{service.title}</CardTitle>
+                  <CardDescription className="text-sm text-slate-600">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-3 pt-2">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                <CardContent className="space-y-2.5 pt-1">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                     Qué incluye este servicio:
                   </p>
-                  <ul className="space-y-2.5 text-sm text-slate-300">
+                  <ul className="space-y-2 text-sm text-slate-700">
                     {service.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-slate-900 shrink-0 mt-0.5" />
                         <span className="leading-snug">{benefit}</span>
                       </li>
                     ))}
@@ -115,8 +114,8 @@ export function ServicesSection() {
                 </CardContent>
               </div>
 
-              <CardFooter className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                <a href={service.ctaHref} className="text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 group">
+              <CardFooter className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                <a href={service.ctaHref} className="text-xs sm:text-sm font-semibold text-slate-900 hover:text-black transition-colors flex items-center gap-1 group">
                   <span>{service.ctaText}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -125,7 +124,7 @@ export function ServicesSection() {
                   href={siteConfig.social.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+                  className="text-xs text-slate-500 hover:text-[#25D366] transition-colors flex items-center gap-1"
                 >
                   <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
                   <span className="hidden sm:inline">WhatsApp directo</span>
@@ -133,21 +132,6 @@ export function ServicesSection() {
               </CardFooter>
             </Card>
           ))}
-        </div>
-
-        {/* Bottom Banner */}
-        <div className="rounded-2xl bg-gradient-to-r from-emerald-950/40 via-slate-900/60 to-slate-900/40 border border-emerald-500/20 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-          <div className="space-y-1 max-w-xl">
-            <h3 className="text-lg font-bold text-white">¿Tenés una consulta específica sobre tu propiedad?</h3>
-            <p className="text-xs sm:text-sm text-slate-400">
-              Analizamos tu caso puntual sin costo y te indicamos la mejor estrategia según la zona de Montevideo.
-            </p>
-          </div>
-          <a href="#contacto" className="shrink-0 w-full sm:w-auto">
-            <Button variant="primary" size="md" className="w-full sm:w-auto" rightIcon={<ArrowRight className="w-4 h-4" />}>
-              Solicitar Asesoramiento
-            </Button>
-          </a>
         </div>
       </div>
     </section>

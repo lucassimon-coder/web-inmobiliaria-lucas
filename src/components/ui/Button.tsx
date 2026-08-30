@@ -15,21 +15,21 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-900/30 hover:shadow-emerald-900/50 border border-emerald-500/30 focus-visible:ring-emerald-500',
+    'bg-zinc-900 hover:bg-zinc-800 text-white shadow-xs border border-zinc-900 focus-visible:ring-zinc-900',
   secondary:
-    'bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-slate-700/80 hover:border-slate-600 focus-visible:ring-slate-400',
+    'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 focus-visible:ring-slate-400',
   outline:
-    'bg-transparent hover:bg-slate-800/60 text-slate-200 border border-slate-700 hover:border-slate-500 focus-visible:ring-slate-400',
+    'bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 hover:border-slate-400 focus-visible:ring-slate-400 shadow-xs',
   whatsapp:
-    'bg-[#25D366] hover:bg-[#20bd5a] text-neutral-950 font-bold shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/35 border border-[#25D366]/40 focus-visible:ring-[#25D366]',
+    'bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-xs shadow-[#25D366]/20 border border-[#25D366]/40 focus-visible:ring-[#25D366]',
   ghost:
-    'bg-transparent hover:bg-slate-800/50 text-slate-300 hover:text-white border border-transparent focus-visible:ring-slate-400',
+    'bg-transparent hover:bg-slate-100 text-slate-700 hover:text-slate-900 border border-transparent focus-visible:ring-slate-400',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-xs font-medium rounded-lg gap-1.5',
-  md: 'px-4 py-2.5 text-sm font-semibold rounded-xl gap-2',
-  lg: 'px-6 py-3.5 text-base font-semibold rounded-xl gap-2.5',
+  sm: 'px-3 py-1.5 text-xs font-semibold rounded-lg gap-1.5',
+  md: 'px-4.5 py-2.5 text-sm font-semibold rounded-xl gap-2',
+  lg: 'px-6 py-3 text-sm sm:text-base font-semibold rounded-xl gap-2.5',
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -52,8 +52,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || isLoading}
         className={cn(
-          'inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950',
+          'inline-flex items-center justify-center font-medium transition-all duration-150 cursor-pointer select-none',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
           'disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed active:scale-[0.98]',
           variantStyles[variant],
           sizeStyles[size],

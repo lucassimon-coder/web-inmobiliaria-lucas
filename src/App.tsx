@@ -11,12 +11,12 @@ import {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-emerald-500/20 selection:text-emerald-300 relative flex flex-col">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white relative flex flex-col font-sans">
       {/* Global Navigation Header */}
       <Navbar />
 
-      {/* Structured Landing Page Flow */}
-      <main className="flex-1 space-y-16 sm:space-y-24">
+      {/* Structured Minimalist Landing Page Flow */}
+      <main className="flex-1 pt-20 sm:pt-24 space-y-12 sm:space-y-16">
         {/* 1. Hero (#inicio) */}
         <HeroSection />
 
